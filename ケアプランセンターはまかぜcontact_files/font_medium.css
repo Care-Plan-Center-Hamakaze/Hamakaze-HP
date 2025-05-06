@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+
+body{
+	font-size: 12px;
+	line-height: 1.4;
+	/*\*/
+	_font-size: 76%;
+	/**/
+	color:#4b4b4b;
+	}
+
+*+html body{font-size: 76%;}/*IE7*/
+html>/**/body {font-size: 76%;}/*IE8*/
+html:not(:target) body{font-size: 12px;}/*modern browsers*/
+
+#tagLineArea #tagLineInner p,
+#header #addressTelArea p.address{ font-size:12px;}
+
+#header #addressTelArea p.telImg{
+	font-size:32px;
+}
+
+
+html:not(:target) #header #addressTelArea p.telImg{font-size: 32px;}/*modern browsers*/
+
+#contentArea h1{
+	font-size:20px;
+	/*\*/
+	_font-size: 150%;
+	/**/}
+
+*+html #contentArea h1{font-size: 150%;}/*IE7*/
+html>/**/body #contentArea h1{font-size: 150%;}/*IE8*/
+html:not(:target) #contentArea h1{font-size: 20px;}/*modern browsers*/
+
+.topImageArea .secondColumnBox p{
+	font-size:18px;
+	/*\*/
+	_font-size: 150%;
+	/**/}
+
+*+html .topImageArea .secondColumnBox p{font-size: 150%;}/*IE7*/
+html>/**/body .topImageArea .secondColumnBox p{font-size: 150%;}/*IE8*/
+html:not(:target) .topImageArea .secondColumnBox p{font-size: 18px;}/*modern browsers*/
+
+#contentInner div.fullColumnBlockA01 h2,
+#contentInner div.fullColumnBlockA01 h3{
+	font-size:14px;
+	/*\*/
+	_font-size: 120%;
+	/**/}
+	
+*+html #contentInner div.fullColumnBlockA01 h2,
+*+html #contentInner div.fullColumnBlockA01 h3{font-size: 120%;}/*IE7*/
+html>/**/body #contentInner div.fullColumnBlockA01 h2,
+html>/**/body #contentInner div.fullColumnBlockA01 h3{font-size: 120%;}/*IE8*/
+html:not(:target) #contentInner div.fullColumnBlockA01 h2,
+html:not(:target) #contentInner div.fullColumnBlockA01 h3{font-size: 14px;}/*modern browsers*/

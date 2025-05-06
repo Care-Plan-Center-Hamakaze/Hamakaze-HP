@@ -1,0 +1,54 @@
+var baseFile = 'index.html';
+var trackobj = new Image();
+var trackscript = '/8020000485/tracking/access.php?bid=' + bid + '&oid=' + oid + '&at=' + at + '&title=' + title;
+var path = window.location.pathname;
+if(path.split('/')[path.split('/').length - 1] == ''){
+    path += baseFile;
+}
+trackscript += '&path=' + path;
+if (window.location.hash != ''){
+    trackscript += window.location.hash;
+}
+if (window.location.search != ''){
+    trackscript += window.location.search;
+}
+if (document.referrer != ''){
+    trackscript += '&referrer=' + escape(document.referrer);
+}else{
+    trackscript += '&referrer=';
+}
+var cookie = document.cookie;
+if (cookie != ''){
+    var commenter = getCookie(cookie,'commenter_name');
+    if (commenter != ''){
+        trackscript += '&uname=' + commenter;
+    } else {
+        trackscript += '&uname=';
+    }
+    var commenter_id = getCookie(cookie,'commenter_id');
+    if (commenter_id != ''){
+        cid = commenter_id.split(':');
+        trackscript += '&uid=' + cid[0];
+    } else {
+        trackscript += '&uid=';
+    }
+}else{
+    trackscript += '&uname=&uid=';
+}
+trackobj.src = trackscript;
+
+function getCookie(cookie,key){
+    var tmp = cookie + ';';
+    var t1 = tmp.indexOf(key,0);
+    if(t1 != -1){
+        tmp = tmp.substring(t1,tmp.length);
+        if(tmp.indexOf('=') > -1){
+            var start = tmp.indexOf('=', 0);
+            var end = tmp.indexOf(';', start);
+            return(unescape(tmp.substring(start + 1, end)));
+        }else{
+            return('');
+        }
+    }
+    return('');
+}
